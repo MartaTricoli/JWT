@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { db } from "./db.js";
 import jws from "jsonwebtoken";
 import * as dotenv from "dotenv"
 dotenv.config();
@@ -33,7 +33,14 @@ const signUp = async (req, res) => {
     }
 }
 
+const logOut = async (req, res) => {
+    const user = req.user;
+    await db.none(`UPDATE users SET token=$2 WHERE id=$1`, [user.id, null]);
+    res.status(200).json({ message: "logout successfull."});
+}
+
 export {
     logIn,
-    signUp
+    signUp,
+    logOut
 }
