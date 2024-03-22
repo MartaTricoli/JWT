@@ -24,10 +24,10 @@ const setUpDb = async () => {
     SELECT COUNT(*)
     FROM titanic
     WHERE Survived = 1
-        And Pclass = 1;
+        AND Pclass = 1;
     
     SELECT *
-    from titanic
+    FROM titanic
     WHERE Embarked = "C"
         AND Fare > 75;
   `)  
