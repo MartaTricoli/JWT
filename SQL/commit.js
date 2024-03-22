@@ -4,7 +4,7 @@ const db = pgPromise()("postgress://postgres:postgres@localhost:5432/postgres");
 
 const setUpDb = async () => {
   await db.none(`
-    BEGIN TRASACTION;
+    BEGIN TRANSACTION;
     DELETE FROM books WHERE id = 101;
     COMMIT;
   `)  
