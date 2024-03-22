@@ -19,7 +19,7 @@ const setUpDb = async () => {
     FROM titanic
     WHERE Fare > 20
         AND Fare < 50
-            AND Port = "C";
+            AND Embarked = "C";
     
     SELECT COUNT(*)
     FROM titanic
@@ -28,7 +28,7 @@ const setUpDb = async () => {
     
     SELECT *
     from titanic
-    WHERE Port = "C"
+    WHERE Embarked = "C"
         AND Fare > 75;
   `)  
 }
